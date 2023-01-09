@@ -1,0 +1,137 @@
+@import '/src/styles/variables.scss';
+@import '/src/styles/variables.scss';
+@import '/src/styles/breakpoints.scss';
+.navbar{
+    padding: 15px 0;
+    color:$white;
+    font-family:$navbar;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: $bg-main;
+    @include lg{
+        padding: 15px 20px;
+    }
+   
+    // &-bg{
+    //      background-color: $bg-main;
+    // }
+   
+    &-wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    &-menu{
+        display: flex;
+        align-items: center;
+        
+    }
+
+    &-button.active{
+        span::before{
+            transform: rotate(-35deg);
+            transform-origin: left bottom;
+            width: 11px;  
+        }  
+         
+        span::after{
+            transform: rotate( 35deg);
+            transform-origin: left bottom;
+            width: 10px; 
+        } 
+    }
+    &-button{
+        padding: 30px;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        position: relative;
+        cursor: pointer;
+        
+       
+        
+        span{
+            @include content;
+            &:before,&:after{
+                content:'';
+                @include content;
+                transition: .5s;
+            };
+            &::before{
+                transform: translateY(-5px);
+              
+            }
+            &::after{
+                transform: translateY(5px);
+
+            }
+            
+        }
+        
+    }
+    &-logo{
+        font-size: 40px;
+        text-decoration: none;
+        color: $white;
+        cursor: pointer;
+    }
+    
+    &-navigation.active{
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    &-navigation{
+        font-size: 20px;
+        transition: .5s;
+        transform-origin: right center;
+        transform: scaleX(0);
+        opacity: 0;
+        @include sm{
+            position: fixed;
+            inset: 0 0 0 0%;
+            background-color: $bg-main;
+            color: $white;
+            padding:0 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+       
+       
+        a{
+            text-decoration: none;
+            color: $white;
+            padding: 10px;
+            position: relative;
+            margin-right: 15px;
+            display: inline-block;
+            cursor: pointer;
+           
+            &:hover{
+                transform: scaleX(1.1);
+                
+                &::after{
+                   width: 100%;
+                   
+                }
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                background-color: $white;
+                width: 0;
+                height: 3px;
+                left: 0;
+                bottom: -10px;
+                transition: .4s;
+            }
+        }
+    }
+}

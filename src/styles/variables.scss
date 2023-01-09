@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+// fonts
+$navbar :'Bakbak One',cursive;
+$text: 'Open Sans', sans-serif; 
+
+
+//bgs
+$bg-main:#0d1015;
+$skills-bg:#30D5C8;
+// #453C67
+@mixin content {
+    position: absolute;
+            margin-top: -1px;
+            top:50%;
+            left:50%;
+            margin-left: -10px;
+            width: 20px;
+            height: 2px;
+            background-color: $bg-main;
+}
+// colors
+$white:#EEEEEE;
+$neon:#BAE8E8;
+$blue:#2DCDDF;

@@ -1,0 +1,20 @@
+$breakpoints:(
+    'phone':560px,
+    'tablet':860px,
+    'desktop':1100px
+);
+@mixin sm{
+    @media(max-width: map-get($breakpoints,'phone')){
+        @content;
+    }
+}
+@mixin md{
+    @media(max-width: map-get($breakpoints,'tablet')){
+        @content;
+    }
+}
+@mixin lg{
+    @media(max-width: map-get($breakpoints,'desktop')){
+        @content;
+    }
+}

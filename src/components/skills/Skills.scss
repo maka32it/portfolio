@@ -1,0 +1,145 @@
+@import '/src/styles/variables.scss';
+@import '/src/styles/variables.scss';
+@import '/src//styles/breakpoints.scss';
+.skills{
+    height: 129vh;
+    background-color: $skills-bg;
+    font-family: $text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include md{
+        height: 140vh;
+    }
+    @include sm{
+        height: 160vh;
+    }
+
+    &-wrap{
+        display: flex;
+        align-items: center;
+        @include lg{
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 80px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .icons{
+            display: none;
+            @include lg{
+                padding: 50px;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 40px;
+                .icon{
+                    width: 25%;
+                    font-size: 75px;
+                    
+                   
+                }
+            }
+        }
+    }
+    &-left{
+        flex-basis: 40%;
+        
+        .title{
+            font-size: 40px;
+            font-weight: 700;
+            @include md{    
+                font-size: 30px;
+            }
+        }
+
+        p{
+            font-weight: 400;
+            padding: 10px 0;
+           
+           
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+            font-weight: 700;
+        }
+        
+    }
+
+    &-right{
+        // height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include lg{
+            display: none;
+        }
+        
+        .cube-spinner{
+            animation-name: spincube;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-duration: 12s;
+            transform-style: preserve-3d;
+            transform-origin: 100px 100px 0;
+            margin-left: calc(50%  + 250px);
+            margin-top: calc(50%  - 400px);
+
+            div{
+                position: absolute;
+                width: 350px;
+                height: 350px;
+                border-radius: 12px;
+                background-color:rgba(0,0,0,.6);
+                font-size: 120px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 0 20px 0px $blue ;
+            }
+            .face1{
+                transform: translateZ(100px);
+            }
+            .face2{
+                transform: rotateY(90deg) translateZ(100px);
+            }
+            .face3{
+                transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+            }
+            .face4{
+                transform:rotateY(180deg) rotateZ(90deg) translateZ(100px);
+            }
+            .face5{
+                transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+            }
+            .face6{
+                transform: rotateX(-90deg) translateZ(100px);
+            }
+        }
+        @keyframes spincube {
+            from,
+            to{
+                transform: rotateX(0) rotateY(0) rotateZ(0);
+            }
+            16%{
+                transform:  rotateY(-90deg) ;
+            }
+            33%{
+                transform: rotateY(-90deg) rotateZ(90deg);
+            }
+            50%{
+                transform: rotateY(-180deg) rotateZ(90deg);
+            }
+            66%{
+                transform: rotateY(-270deg) rotateZ(90deg);
+            }
+            83%{
+                transform: rotateX(90deg) ;
+            }
+            
+
+        }
+    }
+}
